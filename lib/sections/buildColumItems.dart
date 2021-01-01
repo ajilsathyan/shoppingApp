@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/sections/demo.dart';
+import 'package:shopping_app/sections/detailsPage.dart';
 
 GestureDetector buildColumnItems(
     String img, String title, String price, BuildContext context) {
   return GestureDetector(
     onTap: () {
-      Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-        return Demo();
-      }));
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) {
+            return DetailsPage(imageNameNumber: img,imageName: title,candlePrice: price,);
+          },
+        ),
+      );
     },
     child: Column(
       children: [
